@@ -1,28 +1,38 @@
 package hari.edu.j2ee.servlets;
 
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet; 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloServlet
+ * Created by HariHaraKumar on 24/07/2018.
  */
-@WebServlet(description = "Servlet Tutorial", urlPatterns = { "/HelloServlet" })
-public class HelloServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter pageWriter=response.getWriter();
-		pageWriter.write("<b>Hari welcomes you all to the J2EE tutorial </b>");
-	}
+@WebServlet(description = "Servlet tutorial", urlPatterns = {"/helloServlet"})
+public class HelloServlet implements Servlet {
 
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+        System.out.println("Hello Servlet > Inside Init Method");
+    }
+
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+
+    @Override
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("Hello Servlet > Inside Service Method");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+        System.out.println("Hello Servlet > Inside Destroy Method");
+    }
 }

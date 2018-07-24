@@ -13,4 +13,12 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <filter>
+    <filter-name>TraceLoginParamFilter</filter-name>
+    <filter-class>hari.edu.j2ee.filters.TraceLoginParamFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TraceLoginParamFilter</filter-name>
+    <url-pattern>/html/loginServlet</url-pattern>
+  </filter-mapping>
 </web-app>
